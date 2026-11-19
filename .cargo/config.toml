@@ -1,0 +1,4 @@
+[env]
+# Relative to the directory containing .cargo/ (cross mounts the project at
+# the same path inside the container, so the path is valid there too)
+SCCACHE_DIR = { value = "sccache", relative = true }

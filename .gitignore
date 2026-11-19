@@ -1,0 +1,4 @@
+!sccache/.gitkeep
+sccache/*/**
+target/
+tmp/

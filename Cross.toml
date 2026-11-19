@@ -1,0 +1,15 @@
+[build]
+dockerfile = "./Containerfile"
+# pre-build = [
+#     "export SCCACHE_RELEASES=https://github.com/mozilla/sccache/releases/download",
+#     "export SCCACHE_VERSION=0.19.0",
+#     """curl -fL ${SCCACHE_RELEASES}/v${SCCACHE_VERSION}/sccache-v${SCCACHE_VERSION}-x86_64-unknown-linux-musl.tar.gz | \
+#      tar -xvz --strip-components=1 -C /usr/local/bin sccache-v${SCCACHE_VERSION}-x86_64-unknown-linux-musl/sccache""",
+# ]
+
+[build.env]
+passthrough = ["RUSTC_WRAPPER", "SCCACHE_DIR", "SCCACHE_LOG"]
+
+[target.x86_64-unknown-linux-musl]
+image = ":edge"
+
